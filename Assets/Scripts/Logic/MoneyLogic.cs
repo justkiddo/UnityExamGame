@@ -7,24 +7,24 @@ public class MoneyLogic : MonoBehaviour
 
    [SerializeField] private TextMeshProUGUI moneyText;
 
-   public static float money = 500000f;
+   public static float Money = 0f;
    
 
    private void Update()
    {
-      moneyText.text = "Money " + ((int)money).ToString() + " $";
+      moneyText.text = "Money " + ((int)Money).ToString() + " $";
    }
 
 
 
    public float GetMoney()
    {
-      return money;
+      return Money;
    }
 
    public static void SetMoney(float changeMoney)
    {
-      money = changeMoney;
+      Money = changeMoney;
    }
    
 }

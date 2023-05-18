@@ -51,23 +51,23 @@ public class ManagersLogic : MonoBehaviour
     {
         if (_boughtLemonManager)
         {
-            MoneyLogic.money += CareerLogic.LemonPlusMoney * Time.deltaTime;
+            MoneyLogic.Money += CareerLogic.LemonPlusMoney * Time.deltaTime;
         }
     }
     private void PaperManagerMultiplier()
     {
         if (_boughtPaperManager)
         {
-            MoneyLogic.money += CareerLogic.PaperPlusMoney * Time.deltaTime;
+            MoneyLogic.Money += CareerLogic.PaperPlusMoney * Time.deltaTime;
         }
     }
     private void LemonManagerBoughtCheck()
     {
-        if (_boughtLemonManager == false && MoneyLogic.money < 500f)
+        if (_boughtLemonManager == false && MoneyLogic.Money < 500f)
         {
             _lemonImage.color = Color.grey;
         }
-        else if (_boughtLemonManager == false && MoneyLogic.money >= 500)
+        else if (_boughtLemonManager == false && MoneyLogic.Money >= 500)
         {
             _lemonImage.color = Color.white;
         }
@@ -78,11 +78,11 @@ public class ManagersLogic : MonoBehaviour
     }
     private void PaperManagerBoughtCheck()
     {
-        if (_boughtPaperManager == false && MoneyLogic.money < 10000f)
+        if (_boughtPaperManager == false && MoneyLogic.Money < 10000f)
         {
             _paperImage.color = Color.grey;
         }
-        else if (_boughtPaperManager == false && MoneyLogic.money >= 10000f)
+        else if (_boughtPaperManager == false && MoneyLogic.Money >= 10000f)
         {
             _paperImage.color = Color.white;
         }
@@ -94,17 +94,17 @@ public class ManagersLogic : MonoBehaviour
 
     private void BuyLemonManager()
     {
-        if (MoneyLogic.money >= 500f && _boughtLemonManager == false)
+        if (MoneyLogic.Money >= 500f && _boughtLemonManager == false)
         {
-            MoneyLogic.money -= 500;
+            MoneyLogic.Money -= 500;
             _boughtLemonManager = true;
         }
     }
     private void BuyPaperManager()
     {
-        if (MoneyLogic.money >= 10000f && _boughtPaperManager == false)
+        if (MoneyLogic.Money >= 10000f && _boughtPaperManager == false)
         {
-            MoneyLogic.money -= 10000f;
+            MoneyLogic.Money -= 10000f;
             _boughtPaperManager = true;
         }
     }

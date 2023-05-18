@@ -50,28 +50,28 @@ public class UpgradesLogic : MonoBehaviour
 
     private void BuyLemonUpgrade()
     {
-        if (_boughtLemon == false && MoneyLogic.money >= 250000f)
+        if (_boughtLemon == false && MoneyLogic.Money >= 250000f)
         {
-            MoneyLogic.money -= 250000f;
+            MoneyLogic.Money -= 250000f;
             _boughtLemon = true;
         }
     }
     
     private void BuyPaperUpgrade()
     {
-        if (_boughtPaper == false && MoneyLogic.money >= 500000f)
+        if (_boughtPaper == false && MoneyLogic.Money >= 500000f)
         {
-            MoneyLogic.money -= 500000f;
+            MoneyLogic.Money -= 500000f;
             _boughtPaper = true;
         }
     }
 
     private void LemonUpgradeBoughtCheck()
     {
-        if (_boughtLemon == false && MoneyLogic.money < 250000f)
+        if (_boughtLemon == false && MoneyLogic.Money < 250000f)
         {
             _lemonImage.color = Color.gray;
-        }else if (_boughtLemon == false && MoneyLogic.money >= 250000f)
+        }else if (_boughtLemon == false && MoneyLogic.Money >= 250000f)
         {
             _lemonImage.color = Color.white;
         }
@@ -82,10 +82,10 @@ public class UpgradesLogic : MonoBehaviour
     }
     private void PaperUpgradeBoughtCheck()
     {
-        if (_boughtPaper == false && MoneyLogic.money < 250000f)
+        if (_boughtPaper == false && MoneyLogic.Money < 250000f)
         {
             _paperImage.color = Color.gray;
-        }else if (_boughtPaper == false && MoneyLogic.money >= 250000f)
+        }else if (_boughtPaper == false && MoneyLogic.Money >= 250000f)
         {
             _paperImage.color = Color.white;
         }

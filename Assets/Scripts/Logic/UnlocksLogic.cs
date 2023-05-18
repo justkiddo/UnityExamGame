@@ -52,28 +52,28 @@ public class UnlocksLogic : MonoBehaviour
     
     private void BuyPaperUnlock()
     {
-        if (_boughtPaperUnlock == false && MoneyLogic.money >= 15000f)
+        if (_boughtPaperUnlock == false && MoneyLogic.Money >= 15000f)
         {
-            MoneyLogic.money -= 15000f;
+            MoneyLogic.Money -= 15000f;
             _boughtPaperUnlock = true;
         }
     }
     
     private void BuyLemonUnlock()
     {
-        if (_boughtLemonUnlock == false && MoneyLogic.money >= 5000f)
+        if (_boughtLemonUnlock == false && MoneyLogic.Money >= 5000f)
         {
-            MoneyLogic.money -= 5000f;
+            MoneyLogic.Money -= 5000f;
             _boughtLemonUnlock = true;
         }
     }
     
     private void LemonUnlockBoughtCheck()
     {
-        if (_boughtLemonUnlock == false && MoneyLogic.money < 5000f)
+        if (_boughtLemonUnlock == false && MoneyLogic.Money < 5000f)
         {
             _lemonImage.color = Color.gray;
-        }else if (_boughtLemonUnlock == false && MoneyLogic.money >= 5000f)
+        }else if (_boughtLemonUnlock == false && MoneyLogic.Money >= 5000f)
         {
             _lemonImage.color = Color.white;
         }
@@ -85,10 +85,10 @@ public class UnlocksLogic : MonoBehaviour
     
     private void PaperUnlockBoughtCheck()
     {
-        if (_boughtPaperUnlock == false && MoneyLogic.money < 5000f)
+        if (_boughtPaperUnlock == false && MoneyLogic.Money < 5000f)
         {
             _paperImage.color = Color.gray;
-        }else if (_boughtPaperUnlock == false && MoneyLogic.money >= 5000f)
+        }else if (_boughtPaperUnlock == false && MoneyLogic.Money >= 5000f)
         {
             _paperImage.color = Color.white;
         }

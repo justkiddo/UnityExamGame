@@ -29,23 +29,23 @@ public class CareerLogic : MonoBehaviour
 
     private void SellLemon()
     {
-        MoneyLogic.money += LemonPlusMoney ;
+        MoneyLogic.Money += LemonPlusMoney ;
     }
 
     private void SellPaper()
     {
         if (_paperUpgrade == true)
         {
-            MoneyLogic.money += PaperPlusMoney;
+            MoneyLogic.Money += PaperPlusMoney;
         }
     }
     
     private void SellLemonUpgrade()
     {
-        if (MoneyLogic.money >= 30f)
+        if (MoneyLogic.Money >= 30f)
         {
             lemonProgressImage.fillAmount += _lemonClicks * 0.1f;
-            MoneyLogic.money -= 30f;
+            MoneyLogic.Money -= 30f;
             LemonPlusMoney += 1f;
             _lemonClicks++;
         }
@@ -53,11 +53,11 @@ public class CareerLogic : MonoBehaviour
     
     private void SellPaperUpgrade()
     {
-        if (MoneyLogic.money >= 60f)
+        if (MoneyLogic.Money >= 60f)
         {
             _paperUpgrade = true;
             paperProgressImage.fillAmount += _paperClicks * 0.1f;
-            MoneyLogic.money -= 60f;
+            MoneyLogic.Money -= 60f;
             PaperPlusMoney += 2f;
             _paperClicks++;
         }
