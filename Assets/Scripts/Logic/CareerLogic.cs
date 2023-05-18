@@ -65,9 +65,7 @@ public class CareerLogic : MonoBehaviour
             paperProgressImage.fillAmount += _paperClicks * 0.1f;
             MoneyLogic.Money -= 60f;
             PaperPlusMoney += 2f;
-            if (paperProgressImage.fillAmount >= 1f)
-
-                _paperClicks++;
+            _paperClicks++;
             if (paperProgressImage.fillAmount >= 1f)
             {
                 MoneyLogic.Money += 7f;
