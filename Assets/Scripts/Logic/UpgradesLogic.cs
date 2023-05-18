@@ -26,8 +26,6 @@ public class UpgradesLogic : MonoBehaviour
         PaperUpgradeBoughtCheck();
         LemonUpgradeBought();
         PaperUpgradeBought();
-        
-        
     }
 
     private void LemonUpgradeBought()

@@ -1,18 +1,97 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UnlocksLogic : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Button buyLemonUnlockButton;
+    [SerializeField] private Button buyPaperUnlockButton;
+    private bool _boughtLemonUnlock;
+    private bool _boughtPaperUnlock;
+    private Image _lemonImage;
+    private Image _paperImage;
+    
+    
+    private void Awake()
     {
-        
+        _lemonImage = buyLemonUnlockButton.GetComponent<Image>();
+        _paperImage = buyPaperUnlockButton.GetComponent<Image>();
+        buyLemonUnlockButton.onClick.AddListener(BuyLemonUnlock);
+        buyPaperUnlockButton.onClick.AddListener(BuyPaperUnlock);
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    private void Update()
     {
-        
+        LemonUnlockBoughtCheck();
+        PaperUnlockBoughtCheck();
+        LemonUnlockBought();
+        PaperUnlockBought();
     }
+    
+    private void LemonUnlockBought()
+    {
+        if (_boughtLemonUnlock == true)
+        {
+            CareerLogic.LemonPlusMoney += 50f;
+        }
+    }
+    
+    private void PaperUnlockBought()
+    {
+        if (_boughtPaperUnlock == true)
+        {
+            CareerLogic.PaperPlusMoney += 100f;
+        }
+    }
+    
+    private void BuyPaperUnlock()
+    {
+        if (_boughtPaperUnlock == false && MoneyLogic.money >= 15000f)
+        {
+            MoneyLogic.money -= 15000f;
+            _boughtPaperUnlock = true;
+        }
+    }
+    
+    private void BuyLemonUnlock()
+    {
+        if (_boughtLemonUnlock == false && MoneyLogic.money >= 5000f)
+        {
+            MoneyLogic.money -= 5000f;
+            _boughtLemonUnlock = true;
+        }
+    }
+    
+    private void LemonUnlockBoughtCheck()
+    {
+        if (_boughtLemonUnlock == false && MoneyLogic.money < 5000f)
+        {
+            _lemonImage.color = Color.gray;
+        }else if (_boughtLemonUnlock == false && MoneyLogic.money >= 5000f)
+        {
+            _lemonImage.color = Color.white;
+        }
+        else if(_boughtLemonUnlock == true)
+        {
+            _lemonImage.color = Color.red;
+        }
+    }
+    
+    private void PaperUnlockBoughtCheck()
+    {
+        if (_boughtPaperUnlock == false && MoneyLogic.money < 5000f)
+        {
+            _paperImage.color = Color.gray;
+        }else if (_boughtPaperUnlock == false && MoneyLogic.money >= 5000f)
+        {
+            _paperImage.color = Color.white;
+        }
+        else if(_boughtPaperUnlock == true)
+        {
+            _paperImage.color = Color.red;
+        }
+    }
+    
 }

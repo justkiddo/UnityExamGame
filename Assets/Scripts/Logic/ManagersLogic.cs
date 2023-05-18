@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,11 +6,13 @@ public class ManagersLogic : MonoBehaviour
 {
     [SerializeField] private Button buyLemonManagerButton;
     [SerializeField] private Button buyPaperManagerButton;
-    private bool _boughtLemonManager = false;
-    private bool _boughtPaperManager = false;
+    private bool _boughtLemonManager;
+    private bool _boughtPaperManager;
     private Image _lemonImage;
     private Image _paperImage;
-    
+    [SerializeField] private TextMeshProUGUI lemonPlusInfo;
+    [SerializeField] private TextMeshProUGUI paperPlusInfo;
+
     private void Awake()
     {
         _lemonImage = buyLemonManagerButton.GetComponent<Image>();
@@ -24,18 +27,36 @@ public class ManagersLogic : MonoBehaviour
         PaperManagerBoughtCheck();
         LemonManagerMultiplier();
         PaperManagerMultiplier();
+        LemonInfo();
+        PaperInfo();
+    }
+
+    private void LemonInfo()
+    {
+        if (_boughtLemonManager)
+        {
+            lemonPlusInfo.text = "+" + CareerLogic.LemonPlusMoney + " per click";
+        }
+    }
+
+    private void PaperInfo()
+    {
+        if (_boughtPaperManager)
+        {
+            paperPlusInfo.text = "+" + CareerLogic.PaperPlusMoney + " per click";
+        }
     }
 
     private void LemonManagerMultiplier()
     {
-        if (_boughtLemonManager == true)
+        if (_boughtLemonManager)
         {
             MoneyLogic.money += CareerLogic.LemonPlusMoney * Time.deltaTime;
         }
     }
     private void PaperManagerMultiplier()
     {
-        if (_boughtPaperManager == true)
+        if (_boughtPaperManager)
         {
             MoneyLogic.money += CareerLogic.PaperPlusMoney * Time.deltaTime;
         }

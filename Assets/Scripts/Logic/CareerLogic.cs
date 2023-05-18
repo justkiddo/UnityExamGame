@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,7 @@ public class CareerLogic : MonoBehaviour
     [SerializeField] private Image lemonProgressImage;
     [SerializeField] private Button sellPaperButton;
     [SerializeField] private Image paperProgressImage;
-    
+
     public static float LemonPlusMoney = 1f;
     public static float PaperPlusMoney = 3f;
     
@@ -27,6 +28,8 @@ public class CareerLogic : MonoBehaviour
     
     private void Update()
     {
+        
+        
     }
 
 
