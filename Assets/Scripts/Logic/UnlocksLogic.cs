@@ -10,6 +10,8 @@ public class UnlocksLogic : MonoBehaviour
     [SerializeField] private Button buyPaperUnlockButton;
     private bool _boughtLemonUnlock;
     private bool _boughtPaperUnlock;
+    private bool _buyLemonUnlock = false;
+    private bool _buyPaperUnlock = false;
     private Image _lemonImage;
     private Image _paperImage;
     
@@ -32,17 +34,19 @@ public class UnlocksLogic : MonoBehaviour
     
     private void LemonUnlockBought()
     {
-        if (_boughtLemonUnlock == true)
+        if (_boughtLemonUnlock == true && _buyLemonUnlock == false)
         {
-            CareerLogic.LemonPlusMoney += 50f;
+            CareerLogic.LemonPlusMoney += 15f;
+            _buyLemonUnlock = true;
         }
     }
     
     private void PaperUnlockBought()
     {
-        if (_boughtPaperUnlock == true)
+        if (_boughtPaperUnlock == true && _buyPaperUnlock == false)
         {
-            CareerLogic.PaperPlusMoney += 100f;
+            CareerLogic.PaperPlusMoney += 25f;
+            _buyPaperUnlock = true;
         }
     }
     

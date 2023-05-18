@@ -8,6 +8,8 @@ public class UpgradesLogic : MonoBehaviour
     [SerializeField] private Button paperUpgradeButton;
     private bool _boughtLemon = false;
     private bool _boughtPaper = false;
+    private bool _buyLemonUpgrade = false;
+    private bool _buyPaperUpgrade = false;
     private Image _lemonImage;
     private Image _paperImage;
     
@@ -30,17 +32,19 @@ public class UpgradesLogic : MonoBehaviour
 
     private void LemonUpgradeBought()
     {
-        if (_boughtLemon == true)
+        if (_boughtLemon == true && _buyLemonUpgrade == false)
         {
             CareerLogic.LemonPlusMoney *= 3f;
+            _buyLemonUpgrade = true;
         }
     }
     
     private void PaperUpgradeBought()
     {
-        if (_boughtPaper == true)
+        if (_boughtPaper == true && _buyPaperUpgrade == false)
         {
             CareerLogic.PaperPlusMoney *= 3f;
+            _buyPaperUpgrade = true;
         }
     }
 

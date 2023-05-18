@@ -7,7 +7,7 @@ public class MoneyLogic : MonoBehaviour
 
    [SerializeField] private TextMeshProUGUI moneyText;
 
-   public static float money = 0f;
+   public static float money = 500000f;
    
 
    private void Update()

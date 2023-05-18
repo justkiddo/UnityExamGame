@@ -12,7 +12,7 @@ public class CareerLogic : MonoBehaviour
     [SerializeField] private Image paperProgressImage;
 
     public static float LemonPlusMoney = 1f;
-    public static float PaperPlusMoney = 3f;
+    public static float PaperPlusMoney = 2f;
     
     private int _lemonClicks = 0;
     private int _paperClicks = 0;
@@ -26,17 +26,10 @@ public class CareerLogic : MonoBehaviour
         buySecondPassiveUpgradeButton.onClick.AddListener(SellPaperUpgrade);
     }
     
-    private void Update()
-    {
-        
-        
-    }
 
-
-    
     private void SellLemon()
     {
-        MoneyLogic.money += LemonPlusMoney;
+        MoneyLogic.money += LemonPlusMoney ;
     }
 
     private void SellPaper()
