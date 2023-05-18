@@ -48,6 +48,12 @@ public class CareerLogic : MonoBehaviour
             MoneyLogic.Money -= 30f;
             LemonPlusMoney += 1f;
             _lemonClicks++;
+            if (lemonProgressImage.fillAmount >= 1f)
+            {
+                MoneyLogic.Money += 7f;
+                lemonProgressImage.fillAmount = 0;
+                _lemonClicks = 0;
+            }
         }
     }
     
@@ -59,7 +65,15 @@ public class CareerLogic : MonoBehaviour
             paperProgressImage.fillAmount += _paperClicks * 0.1f;
             MoneyLogic.Money -= 60f;
             PaperPlusMoney += 2f;
-            _paperClicks++;
+            if (paperProgressImage.fillAmount >= 1f)
+
+                _paperClicks++;
+            if (paperProgressImage.fillAmount >= 1f)
+            {
+                MoneyLogic.Money += 7f;
+                paperProgressImage.fillAmount = 0;
+                _paperClicks = 0;
+            }
         }
     }
     
