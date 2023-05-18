@@ -12,19 +12,11 @@ public class CareerLogic : MonoBehaviour
     
     public static float LemonPlusMoney = 1f;
     public static float PaperPlusMoney = 3f;
+    
     private int _lemonClicks = 0;
     private int _paperClicks = 0;
     private bool _paperUpgrade = false;
-    private void Update()
-    {
-
-        if (paperProgressImage.fillAmount >= 1f)
-        {
-           
-        }
-        
-    }
-
+    
     private void Awake()
     {
         sellLemonButton.onClick.AddListener(SellLemon);
@@ -32,6 +24,12 @@ public class CareerLogic : MonoBehaviour
         buyFirstPassiveUpgradeButton.onClick.AddListener(SellLemonUpgrade);
         buySecondPassiveUpgradeButton.onClick.AddListener(SellPaperUpgrade);
     }
+    
+    private void Update()
+    {
+    }
+
+
     
     private void SellLemon()
     {
